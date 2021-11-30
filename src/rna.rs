@@ -3,10 +3,7 @@ Transcribing DNA into RNA
 https://rosalind.info/problems/rna/
 */
 
-#[derive(Debug, Clone)]
-struct TranscriptionError;
-
-fn transcribe(dna: &str) -> Result<String, TranscriptionError> {
+fn transcribe(dna: &str) -> Result<String, String> {
     let mut rna = String::new();
     for nucleotide in dna.chars() {
         let next = match nucleotide {
@@ -14,13 +11,9 @@ fn transcribe(dna: &str) -> Result<String, TranscriptionError> {
             'C' => Ok('C'),
             'G' => Ok('G'),
             'T' => Ok('U'),
-            _ => Err(TranscriptionError)
+            other => Err(format!("invalid nucleotide: '{}'", other))
         };
-        if let Ok(n) = next {
-            rna.push(n);
-        } else {
-            return Err(next.err().unwrap());
-        }
+        rna.push(next?);
     }
     Ok(rna)
 }
