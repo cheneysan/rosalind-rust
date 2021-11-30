@@ -10,7 +10,7 @@ https://rosalind.info/problems/fib/
 // return b
 
 fn fib(n: usize, k: usize) -> usize {
-    let mut a= 1;
+    let mut a;
     let mut b = 1;
     let mut c = 1;
     for _ in 2..n {

@@ -1,0 +1,6 @@
+>test-1
+ACGTACGT
+>test-2
+AAAA
+GGG
+CCTT
