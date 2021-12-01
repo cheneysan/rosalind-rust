@@ -7,3 +7,4 @@ mod fib;
 mod gc;
 mod hamm;
 mod prot;
+mod subs;
