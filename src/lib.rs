@@ -6,3 +6,4 @@ mod revc;
 mod fib;
 mod gc;
 mod hamm;
+mod prot;
